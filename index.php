@@ -14,9 +14,10 @@ vengono istanziati almeno due oggetti ‘Movie’ e stampati a schermo i valori 
         public $originalLang;
 
 
-        function __construct($_title, $_year) {
+        function __construct($_title, $_year, $_originalLang) {
             $this->title = $_title;
             $this->year = $_year;
+            $this->originalLang = $_originalLang;
         }
 
         public function getTitle() {
@@ -27,12 +28,21 @@ vengono istanziati almeno due oggetti ‘Movie’ e stampati a schermo i valori 
             return $this->year;
         }
 
+        public function getLang() {
+            return $this->originalLang;
+        }
+
     }
 
-    $title = new Movie("Avengers", "2015");
-    echo "<p> Titolo : " . $title->getTitle() . "<p>";
 
-    $year = new Movie("Avengers", "2015");
-    echo "<p> Anno : " . $year->getYear();
+    $padrino = new Movie("Il Padrino", "1972", "English");
+    echo "<h1> Titolo : " . $padrino->getTitle() . "</h1>";
+    echo "<p> Anno produzione : " . $padrino->getYear() . "</p>";
+    echo "<p> Lingua originale : " . $padrino->getLang() . "</p>";
+
+    $avengers = new Movie("Avengers", "2015", "English");
+    echo "<h1> Titolo : " . $avengers->getTitle() . "</h1>";
+    echo "<p> Anno produzione : " . $avengers->getYear() . "</p>";
+    echo "<p> Lingua originale : " . $avengers->getLang() . "</p>";
 
 ?>
