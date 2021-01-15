@@ -7,11 +7,11 @@ vengono istanziati almeno due oggetti ‘Movie’ e stampati a schermo i valori 
 <?php
 
     class Movie {
-        public $title
-        public $originalTitle
-        public $year
-        public $genre
-        public $originalLang
+        public $title;
+        public $originalTitle;
+        public $year;
+        public $genre;
+        public $originalLang;
 
 
         function __construct($_title, $_year) {
@@ -30,5 +30,9 @@ vengono istanziati almeno due oggetti ‘Movie’ e stampati a schermo i valori 
     }
 
     $title = new Movie("Avengers", "2015");
-    echo "<p> Titolo :" . $title->getTitle() . "<p>"
+    echo "<p> Titolo : " . $title->getTitle() . "<p>";
+
+    $year = new Movie("Avengers", "2015");
+    echo "<p> Anno : " . $year->getYear();
+
 ?>
